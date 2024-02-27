@@ -1,11 +1,10 @@
 import {
+  FlatList,
   Image,
   StyleSheet,
   Text,
-  View,
-  FlatList,
   TouchableOpacity,
-  StatusBar,
+  View,
 } from "react-native";
 import React, { useState, useEffect } from "react";
 import { Icon, IconButton } from "react-native-paper";
@@ -19,34 +18,29 @@ import {
   textColor,
   inactiveColor2,
 } from "../style/utilities/Colors";
-import { featured } from "../constants";
 import { horizontalScale, verticalScale } from "../style/utilities/Dimensions";
+import { featured2 } from "../constants/index2";
 
-const DishCard = () => {
-  const navigation = useNavigation();
+const DessertCard = () => {
   const [heart, setHeart] = useState();
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    setData(featured.restaurants), [];
+    setData(featured2.restaurants), [];
   });
 
   const renderData = ({ item }) => {
     return (
       <View style={styles.cardContainer}>
-        <Image source={item.image} style={styles.image} />
-        {/* Discount */}
-        <View style={styles.discountContainer}>
-          <Text style={textStyles.titleText}>20% off</Text>
-        </View>
-        {/* Like Button */}
+            <Image source={item.image} style={styles.image} />
+          {/* Like Button */}
         <View style={styles.likeContainer}>
           <Icon source="heart-outline" size={22} color={inactiveColor} />
         </View>
         <View style={styles.cardContentContainer}>
           {/* Dish Price */}
           <View style={styles.rateContainer}>
-            <Text style={textStyles.priceText}>$ {item.dishes[0].price}</Text>
+            <Text style={textStyles.priceText}>$45</Text>
           </View>
           {/* Dish Name */}
           <View style={styles.rateContainer}>
@@ -70,19 +64,9 @@ const DishCard = () => {
   };
   return (
     <>
-      <View style={styles.nameContainer}>
-        <Text style={textStyles.headingText}>Today's Specials</Text>
-        <TouchableOpacity
-          onPress={() => {
-            navigation.navigate("Top");
-          }}
-        >
-          <Icon source="arrow-right" size={32} color={textColor} />
-        </TouchableOpacity>
-      </View>
       <FlatList
-        horizontal
-        showsHorizontalScrollIndicator={false}
+        numColumns={2}
+        showsVerticalScrollIndicator={false}
         data={data}
         renderItem={renderData}
       />
@@ -90,24 +74,16 @@ const DishCard = () => {
   );
 };
 
-export default DishCard;
+export default DessertCard;
 
 const styles = StyleSheet.create({
-  nameContainer: {
-    height: verticalScale(54),
-    width: horizontalScale(380),
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: 8,
-  },
   cardContainer: {
     height: verticalScale(320),
-    width: horizontalScale(200),
-    alignItems: "center",
+    width: horizontalScale(170),
+    justifyContent: "center",
     borderRadius: 48 / 2,
     backgroundColor: bgColor,
-    marginHorizontal: 6,
+    margin: 6,
     shadowOffset: {
       width: 0,
       height: 2,
@@ -121,15 +97,6 @@ const styles = StyleSheet.create({
     width: "100%",
     borderRadius: 30 / 2,
   },
-  discountContainer: {
-    position: "absolute",
-    left: 0,
-    top: 0,
-    margin: 10,
-    padding: 4,
-    borderRadius: 30 / 2,
-    backgroundColor: "rgba(255,255,255,0.8)",
-  },
   likeContainer: {
     position: "absolute",
     right: 0,
@@ -141,10 +108,10 @@ const styles = StyleSheet.create({
   },
   cardContentContainer: {
     height: verticalScale(140),
-    width: horizontalScale(200),
+    width: "100%",
     justifyContent: "space-evenly",
     alignItems: "stretch",
-    padding: 12,
+    padding: 10,
   },
   rateContainer: {
     flexDirection: "row",

@@ -26,6 +26,7 @@ import {
   verticalScale,
 } from "../../style/utilities/Dimensions";
 import { RFPercentage, RFValue } from "react-native-responsive-fontsize";
+import RestraurantCard from "../../components/RestraurantCard";
 
 const HomeScreen = () => {
   return (
@@ -74,6 +75,8 @@ const HomeScreen = () => {
         <CategoryCard />
         {/* Todays Special */}
         <DishCard />
+        {/* Nearby Restraurant */}
+        <RestraurantCard />
       </SafeAreaView>
     </>
   );

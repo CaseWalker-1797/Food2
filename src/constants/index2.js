@@ -1,40 +1,40 @@
-export const categories = [
+export const categories2 = [
   {
     id: 1,
-    name: "Chicken",
-    image: require("../assets/images/chickenIcon.png"),
+    name: "Cake",
+    image: require("../assets/images/Dessert/cakeIcon.png"),
   },
   {
     id: 2,
-    name: "Dessert",
-    image: require("../assets/images/dessertIcon.png"),
+    name: "Ice Cream",
+    image: require("../assets/images/Dessert/icecreamIcon.png"),
   },
   {
     id: 3,
-    name: "Fast Food",
-    image: require("../assets/images/fastfoodIcon.png"),
+    name: "Pudding",
+    image: require("../assets/images/Dessert/puddingIcon.png"),
   },
   {
     id: 4,
-    name: "Drinks",
-    image: require("../assets/images/drinksIcon.png"),
+    name: "Cookies",
+    image: require("../assets/images/Dessert/cookiesIcon.png"),
   },
   {
     id: 5,
-    name: "Snakcs",
-    image: require("../assets/images/snacksIcon.png"),
+    name: "Milkshakes",
+    image: require("../assets/images/Dessert/milkshakeIcon.png"),
   },
 ];
 
-export const featured = {
+export const featured2 = {
   id: 1,
   title: "Hot and Spicy",
   description: "soft and tender fried chicken",
   restaurants: [
     {
       id: 1,
-      name: "Papa Johns",
-      image: require("../assets/images/pizzaDish.png"),
+      name: "Piquant Palette",
+      image: require("../assets/images/chocolatecakeDish.jpeg"),
       description: "Hot and spicy pizzas",
       lng: -85.5324269,
       lat: 38.2145602,
@@ -45,7 +45,7 @@ export const featured = {
       dishes: [
         {
           id: 1,
-          name: "Pizza",
+          name: "Chocolate Cake",
           description: "cheezy garlic pizza",
           price: 10,
           image: require("../assets/images/pizzaDish.png"),
@@ -68,8 +68,8 @@ export const featured = {
     },
     {
       id: 2,
-      name: "Subway Restaurant",
-      image: require("../assets/images/pastaDish.jpeg"),
+      name: "Ambosia Alley",
+      image: require("../assets/images/vanillaicecreamDish.jpeg"),
       description: "Hot and spicy pizzas",
       lng: -85.5324269,
       lat: 38.2145602,
@@ -80,10 +80,10 @@ export const featured = {
       dishes: [
         {
           id: 1,
-          name: "White Sauce Pasta",
+          name: "Vanilla Ice Cream",
           description: "cheezy garlic pizza",
           price: 10,
-          image: require("../assets/images/pastaDish.jpeg"),
+          image: require("../assets/images/pizzaDish.png"),
         },
         {
           id: 2,
@@ -103,8 +103,8 @@ export const featured = {
     },
     {
       id: 3,
-      name: "Instacart Restaurant",
-      image: require("../assets/images/dumhandibiryaniDish.jpeg"),
+      name: "Culinary Restaurant",
+      image: require("../assets/images/puddingDish.jpeg"),
       description: "Hot and spicy pizzas",
       lng: -85.5324269,
       lat: 38.2145602,
@@ -115,10 +115,45 @@ export const featured = {
       dishes: [
         {
           id: 1,
-          name: "Dum Handi Biryani ",
+          name: "Caramel Pudding",
           description: "cheezy garlic pizza",
           price: 10,
-          image: require("../assets/images/dumhandibiryaniDish.jpeg"),
+          image: require("../assets/images/pizzaDish.png"),
+        },
+        {
+          id: 2,
+          name: "pizza",
+          description: "cheezy garlic pizza",
+          price: 10,
+          image: require("../assets/images/pizzaDish.png"),
+        },
+        {
+          id: 3,
+          name: "pizza",
+          description: "cheezy garlic pizza",
+          price: 10,
+          image: require("../assets/images/pizzaDish.png"),
+        },
+      ],
+    },
+    {
+      id: 4,
+      name: "Subway Restaurant",
+      image: require("../assets/images/donutDish.jpeg"),
+      description: "Hot and spicy pizzas",
+      lng: -85.5324269,
+      lat: 38.2145602,
+      address: "434 second street",
+      stars: 4,
+      reviews: "4.4k",
+      category: "Fast Food",
+      dishes: [
+        {
+          id: 1,
+          name: "Donut",
+          description: "cheezy garlic pizza",
+          price: 10,
+          image: require("../assets/images/pizzaDish.png"),
         },
         {
           id: 2,

@@ -2,8 +2,9 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Icon } from "react-native-paper";
 import HomeScreen from "../screens/appStack/HomeScreen";
 import PuddingScreen from "../screens/appStack/PuddingScreen";
-import { accentColor, inactiveColor } from "../style/utilities/Colors";
+import { accentColor, inactiveColor2 } from "../style/utilities/Colors";
 import { NavigationContainer } from "@react-navigation/native";
+import DessertScreen from "../screens/appStack/DessertScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -11,10 +12,10 @@ const Navigation = ({ navigation }) => {
   return (
     <NavigationContainer>
       <Tab.Navigator
-        initialRouteName="Home"
+        initialRouteName="Pudding"
         screenOptions={{
           tabBarActiveTintColor: accentColor,
-          tabBarInactiveTintColor: inactiveColor,
+          tabBarInactiveTintColor: inactiveColor2,
         }}
       >
         <Tab.Screen
@@ -28,7 +29,17 @@ const Navigation = ({ navigation }) => {
           }}
         />
         <Tab.Screen
-          name="Favorite"
+          name="Dessert"
+          component={DessertScreen}
+          options={{
+            headerShown: false,
+            tabBarIcon: ({ color }) => (
+              <Icon source="ice-cream" color={color} size={28} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Pudding"
           component={PuddingScreen}
           options={{
             headerShown: false,
